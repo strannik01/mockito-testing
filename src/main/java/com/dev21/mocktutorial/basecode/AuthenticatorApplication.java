@@ -24,8 +24,9 @@ public class AuthenticatorApplication {
 	 * @param password
 	 *            The password to authenticate the user.
 	 * @return True if the user has been authenticated; false if it has not.
+	 * @throws EmptyCredentialsException 
 	 */
-	public boolean authenticate(String username, String password) {
+	public boolean authenticate(String username, String password) throws EmptyCredentialsException {
 		boolean authenticated;
 		
 		this.authenticator.foo();
