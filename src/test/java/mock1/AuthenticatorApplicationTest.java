@@ -74,4 +74,6 @@ public class AuthenticatorApplicationTest {
 		when(authenticatorMock.authenticateUser("", "")).thenThrow(new EmptyCredentialsException());
 		authenticator.authenticate("", "");
 	}
+	
+//	public void test
 }
