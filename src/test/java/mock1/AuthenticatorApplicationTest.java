@@ -1,6 +1,7 @@
 package mock1;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.atMost;
@@ -75,5 +76,15 @@ public class AuthenticatorApplicationTest {
 		authenticator.authenticate("", "");
 	}
 	
-//	public void test
+	@Test
+	public void testAuthenticateMockInjection() throws EmptyCredentialsException {
+		String username = "javacodegeeks";
+		String password = "s4f3 p4ssw0rd";
+		
+		when(this.authenticatorMock.authenticateUser(username, password)).thenReturn(true);
+		
+		boolean actual = this.authenticator.authenticate("javacodegeeks", "s4f3 p4ssw0rd");
+		
+		assertTrue(actual);
+	}
 }
