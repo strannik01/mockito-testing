@@ -13,7 +13,7 @@ public interface AuthenticatorInterface {
 	 * @throws EmptyCredentialsException
 	 *             If the received credentials (user name, password) - are empty.
 	 */
-	public boolean authenticateUser(String username, String password) throws EmptyCredentialsException;
+	public boolean authenticateUser(String username, String password) throws EmptyCredentialsException, NotAuthenticatedException;
 	
 	public void foo();
 }
