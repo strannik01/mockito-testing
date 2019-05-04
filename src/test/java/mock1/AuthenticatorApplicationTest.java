@@ -22,6 +22,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import com.dev21.mocktutorial.basecode.AuthenticatorApplication;
 import com.dev21.mocktutorial.basecode.AuthenticatorInterface;
 import com.dev21.mocktutorial.basecode.EmptyCredentialsException;
+import com.dev21.mocktutorial.basecode.NotAuthenticatedException;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AuthenticatorApplicationTest {
@@ -33,7 +34,7 @@ public class AuthenticatorApplicationTest {
 	private AuthenticatorApplication authenticator;
 
 	@Test
-	public void testAuthenticate() throws EmptyCredentialsException {
+	public void testAuthenticate() throws EmptyCredentialsException, NotAuthenticatedException {
 		AuthenticatorInterface authenticatorMock;
 		AuthenticatorApplication authenticator;
 		String username = "JavaCodeGeeks";
@@ -65,7 +66,7 @@ public class AuthenticatorApplicationTest {
 	}
 
 	@Test(expected = EmptyCredentialsException.class)
-	public void testAuthenticateEmptyCredentialsException() throws EmptyCredentialsException {
+	public void testAuthenticateEmptyCredentialsException() throws EmptyCredentialsException, NotAuthenticatedException {
 		AuthenticatorInterface authenticatorMock;
 		AuthenticatorApplication authenticator;
 		
@@ -77,7 +78,7 @@ public class AuthenticatorApplicationTest {
 	}
 	
 	@Test
-	public void testAuthenticateMockInjection() throws EmptyCredentialsException {
+	public void testAuthenticateMockInjection() throws EmptyCredentialsException, NotAuthenticatedException {
 		String username = "javacodegeeks";
 		String password = "s4f3 p4ssw0rd";
 		
